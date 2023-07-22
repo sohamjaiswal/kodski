@@ -1,0 +1,22 @@
+---
+title: Second Post
+description: My Second Post
+date: '2023-7-23'
+categories: 
+  - SvelteKit
+  - Svelte
+published: true
+---
+
+<script>
+  import Counter from '$lib/components/Counter.svelte'
+</script>
+
+## Media
+
+Media inside **static** is served from '/'.
+
+![Skeleton](/favicon.png)
+
+## Counter
+<Counter />

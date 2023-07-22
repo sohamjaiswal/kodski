@@ -1,0 +1,19 @@
+---
+title: First Post 
+description: My First Post
+date: '2023-7-22'
+categories: 
+  - SvelteKit
+  - Svelte
+published: true
+---
+
+## Markdown
+
+Yo peeps this is my first ever markdown post in svelte!
+
+```ts
+function greet(name: string) {
+  console.log(`Hi ${name} 👋`);
+}
+```

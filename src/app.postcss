@@ -9,3 +9,43 @@ body {
 	src: url('/fonts/Quicksand.ttf');
 	font-display: swap;
 }
+
+@font-face {
+	font-family: 'Gotham Ultra';
+	src: url('/fonts/Gotham-Ultra.woff2');
+	font-display: swap;
+}
+
+.gotham-ultra {
+	font-family: 'Gotham Ultra';
+}
+
+.stylish {
+	color: #f35626;
+	background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+	background-image: linear-gradient(92deg, #f35626, #feab3a); /* For other browsers */
+	-webkit-background-clip: text;
+	background-clip: text; /* For other browsers */
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent; /* For other browsers */
+	-webkit-animation: hue 15s infinite linear;
+	animation: hue 15s infinite linear; /* For other browsers */
+}
+
+@-webkit-keyframes hue {
+	from {
+		-webkit-filter: hue-rotate(0deg);
+	}
+	to {
+		-webkit-filter: hue-rotate(-360deg);
+	}
+}
+
+@keyframes hue {
+	from {
+		filter: hue-rotate(0deg);
+	}
+	to {
+		filter: hue-rotate(-360deg);
+	}
+}
