@@ -1,0 +1,13 @@
+---
+title: Third Post
+description: Emoji Test
+date: '2023-8-15'
+categories: 
+  - SvelteKit
+  - Svelte
+published: true
+---
+:smile:
+:earperk:
+
+Inline emotes too! :earperk: and this is gonna be a ver long asf line Lorem est ad reprehenderit veniam officia occaecat eiusmod ea velit culpa velit elit et. Et consequat laborum cupidatat tempor magna laboris aliqua excepteur. Veniam consectetur consequat velit nisi laboris culpa excepteur tempor.

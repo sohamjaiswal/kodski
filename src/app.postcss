@@ -1,7 +1,34 @@
 /*place global styles here */
+
+@media (prefers-color-scheme: light) {
+	.shiki.monokai {
+		display: none;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.shiki.material-lighter {
+		display: none;
+	}
+}
+
 html,
 body {
 	@apply h-full overflow-hidden;
+	cursor: default;
+	.shiki.monokai {
+		display: none;
+	}
+	.shiki.material-lighter {
+		display: block;
+	}
+	&.dark {
+		.shiki.material-lighter {
+			display: none;
+		}
+		.shiki.monokai {
+			display: block;
+		}
+	}
 }
 
 @font-face {
@@ -20,32 +47,32 @@ body {
 	font-family: 'Gotham Ultra';
 }
 
-.stylish {
-	color: #f35626;
-	background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
-	background-image: linear-gradient(92deg, #f35626, #feab3a); /* For other browsers */
-	-webkit-background-clip: text;
-	background-clip: text; /* For other browsers */
-	-webkit-text-fill-color: transparent;
-	text-fill-color: transparent; /* For other browsers */
-	-webkit-animation: hue 15s infinite linear;
-	animation: hue 15s infinite linear; /* For other browsers */
-}
-
-@-webkit-keyframes hue {
-	from {
-		-webkit-filter: hue-rotate(0deg);
-	}
-	to {
-		-webkit-filter: hue-rotate(-360deg);
+span {
+	.custom-emoji {
+		width: 1.5em;
+		height: 1.5em;
+		vertical-align: -0.15em;
+		margin: 0 0.05em 0 0.1em;
+		/* display: inline-block; */
 	}
 }
 
-@keyframes hue {
-	from {
-		filter: hue-rotate(0deg);
-	}
-	to {
-		filter: hue-rotate(-360deg);
-	}
+hgroup {
+	margin-bottom: 16px;
+}
+
+.prose p:not(:is(h2, h3, h4, h5, h6) + p) {
+	margin-top: 28px;
+}
+
+.prose :is(ul, ol) li {
+	margin-block: 8px;
+	padding-inline-start: 8px;
+}
+
+.prose pre {
+	max-inline-size: 100%;
+	padding: 12px;
+	border-radius: 8px;
+	tab-size: 2;
 }

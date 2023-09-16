@@ -12,11 +12,111 @@ published: true
   import Counter from '$lib/components/Counter.svelte'
 </script>
 
+## Table of Contents
+
 ## Media
 
-Media inside **static** is served from '/'.
+Media inside **static** is served from " / ".
 
 ![Skeleton](/favicon.png)
 
 ## Counter
 <Counter />
+
+## Code
+  
+  ```js
+  const a = 1
+  const b = 2
+  const c = a + b
+  console.log(c)
+  ```
+
+## Links
+
+[Link to Google](https://google.com)
+
+## Lists
+
+- List 1
+- List 2
+- List 3
+
+## Blockquote
+
+> This is a blockquote
+
+## Table
+
+| Name | Age |
+| ---- | --- |
+| John | 20  |
+| Jane | 21  |
+
+## Horizontal Rule
+
+---
+
+## HTML
+
+<div style="background: red; color: white; padding: 1rem;">
+  This is a div
+</div>
+
+## Math
+
+$$
+\frac{1}{2}
+$$
+
+## Footnotes
+
+This is a footnote[^1]
+
+[^1]: This is a footnote
+
+## Abbreviations
+
+HTML is a <abbr title="Hyper Text Markup Language">HTML</abbr>
+
+## Subscript
+
+H<sub>2</sub>O
+
+## Superscript
+
+2<sup>10</sup>
+
+## Mark
+
+This is a <mark>marked</mark> text
+
+## Ins
+
+This is an <ins>inserted</ins> text
+
+## Del
+
+This is a <del>deleted</del> text
+
+## Keyboard
+
+Press <kbd>Ctrl</kbd> + <kbd>C</kbd>
+
+## Inline Code
+
+This is an inline code `<div></div>`
+
+## Task List
+
+* [x] Task 1
+* [ ] Task 2
+* [ ] Task 3
+
+## Emoji
+
+:smile:
+:earperk:
+<span>
+Inline emotes too! :earperk:
+</span>

@@ -1,0 +1,60 @@
+---
+title: Me!
+description: A little about me & also for the landing page :P
+date: '2023-8-16'
+categories: 
+  - SvelteKit
+  - Svelte
+published: true
+---
+I'll present myself in code! :zerotwo_hype:
+```ts twoslash
+// @module: esnext
+// @filename: races.ts
+export abstract class Human {
+  name: string
+  age: string
+  location: string
+  gender: boolean
+  abstract nick: string
+  abstract social: Record<string, string | Array<string>>
+  abstract interests: string[]
+  // abstract specializationSpecific: Specialization
+  constructor(details: Omit<Human, "nick"|"social"|"interests">) {
+    this.name = details.name
+    this.age = details.age
+    this.location = details.location
+    this.gender = details.gender
+  }
+}
+// @filename: me.private.ts
+import { Human } from './races'
+const genericDetails: Omit<Human, "nick"|"social"|"interests"> = {
+    name:'Ham', 
+    age:'20', 
+    location:'India', 
+    gender: true
+  }
+export default genericDetails
+// @filename: me.public.ts
+// ---cut---
+import { Human } from './races' // Think grander ✨
+import genericDetails from './me.private'
+class Ham extends Human {
+  nick = 'Ham'
+  social = {
+    discord: 'TooMuchHam',
+    guilded: 'https://www.guilded.gg/u/sosweetham'
+  }
+  interests = ['Programming', 'Gaming', 'Anime'] // :gigachad:
+  constructor(proDetails: Omit<Human, "nick"|"social"|"interests">) {
+    super(proDetails)
+  }
+  greet() {
+    return `Hello, I'm ${this.nick}! 
+    My interests are ${this.interests.join(', ')}!`
+  }
+}
+const ham = new Ham(genericDetails)
+const greeting = ham.greet()
+```

@@ -9,7 +9,6 @@ export const load = async({params}) => {
       meta: post.metadata as Omit<Post, 'slug'>
     }
   } catch (e) {
-    console.log(e)
     throw error(404, `Could not find post with slug, ${params.slug}`)
   }
 }

@@ -1,6 +1,11 @@
 <script lang='ts'>
-  export let src = ''
-  export let alt = ''
+	import type { HTMLAttributes } from "svelte/elements";
+  interface $$Props extends HTMLAttributes<HTMLImageElement> {
+    alt: string;
+    src: string;
+  }
+  export let alt = "";
+  export let src = "";
 </script>
 
-<img {src} {alt} loading="lazy">
+<img {...$$restProps} {src} {alt} loading="lazy">

@@ -6,5 +6,6 @@ export type Post = {
   slug: string,
   date: string,
   categories: Categories[],
-  published: boolean
+  published: boolean,
+  readingTime?: string
 }

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Categories, Post } from "$lib/types";
+  import type { ReadTimeResults } from "reading-time";
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
 	interface $$Props extends Post {}
@@ -10,6 +11,7 @@
   export let date = ''
   export let categories: Categories[] = []
   export let published = true
+  export let readingTime = ''
 
 </script>
 
@@ -35,9 +37,10 @@
     <main class="h-24">
       {description}
     </main>
-    <footer>
-      <hr class="my-2" />
+    <hr class="my-2" />
+    <footer class="flex justify-between">
       {(new Date(date)).toLocaleDateString()}
+      <span class="badge variant-ringed-surface">{readingTime}</span>
     </footer>
     {/if}
   </div>

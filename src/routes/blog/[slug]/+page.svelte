@@ -27,30 +27,11 @@
       <span class="badge variant-filled">{'#' + category}</span>
     {/each}
   </div>
+  <p class="mt-2 mb-3">
+    {data.meta.description}
+  </p>
   <hr class='my-2' />
   <div class="prose text-inherit">
     <svelte:component this={data.content} />
   </div>
 </article>
-
-<style lang="postcss">
-  hgroup {
-    margin-bottom: 16px;
-  }
-
-  .prose p:not(:is(h2, h3, h4, h5, h6) + p) {
-    margin-top: 28px;
-  }
-
-  .prose :is(ul, ol) li {
-    margin-block: 8px;
-    padding-inline-start: 8px;
-  }
-
-  .prose pre {
-    max-inline-size: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    tab-size: 2;
-  }
-</style>
