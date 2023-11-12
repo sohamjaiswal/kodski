@@ -1,0 +1,32 @@
+---
+title: My Stuff!
+description: Some projects that I've worked on.
+date: '2023-11-13'
+categories: 
+  - SvelteKit
+  - Svelte
+published: true
+---
+
+# My Stuff! 
+<span>
+I have been developing since high school and I'll take this opportunity to showcase some of the good ones among the sea of many :zerotwo_hype:
+</span>
+
+## GPlace
+GPlace was my reddit.com/r/place reverse engineering project where I tried to recreate r/place in svleltekit. I linked it's auth with my existing cardboard project and managed to gain noticable user traction on Guilded.
+
+
+Viewable at: [GPlace.ink](https://gplace.ink), Source Code: [Github](https://github.com/sohamjaiswal/sveltekit-place)
+
+## Cardboard
+Cardboard is my rfc6749/OAuth2.0 compliant third party openid provider, currently supporting the Guilded platform, it comes with a fully functional admin panel and a user dashboard. It comes with wrapper libs for it's API in NodeJS, and NextAuthJS. It also managed to gain a popular Python wrapper from it's active developer community.
+
+Viewable at: [Cardboard.ink](https://cardboard.ink), Repos: [Github](https://github.com/cardboard-ink/cardboard)
+
+NPM Package: [npm.js](https://www.npmjs.com/package/cardboard.js)
+
+## GRASS
+My first app in tauri, and introduction to rust. GRASS is a simple app that allows you to set your Guilded **✨RICH✨** status to the song you're currently listening to on spotify. It's a simple app that I made for myself, but it's open source and you can use it too!
+
+Repo: [Github](https://github.com/sohamjaiswal/grass)
