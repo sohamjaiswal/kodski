@@ -94,15 +94,15 @@
     const posUnit = 'px'
     const dogeImgXPos = Number(dogePos.style.getPropertyValue('--doge-offset').slice(0, -posUnit.length));  // remove 'px' from end
     const dogeImgXPosPercent = (dogeImgXPos/(playSpace.offsetWidth - 16))*100;
-
+    console.log(dogeImgXPosPercent)
     if (!(dogeImgXPosPercent < 0 || dogeImgXPosPercent > 100)) {
       return
     }
-    const stationaryAnimations = ['idle', 'lie', 'swipe'] as Array<Partial<ActiveAnimation>>;
-    if (stationaryAnimations.includes(activeAnimation)) {
-      return
-    }
-    activeAnimation = stationaryAnimations[Math.floor(Math.random() * stationaryAnimations.length)] as ActiveAnimation;
+    // const stationaryAnimations = ['idle', 'lie', 'swipe'] as Array<Partial<ActiveAnimation>>;
+    // if (stationaryAnimations.includes(activeAnimation)) {
+    //   return
+    // }
+    // activeAnimation = stationaryAnimations[Math.floor(Math.random() * stationaryAnimations.length)] as ActiveAnimation;
     if (dogeImgXPosPercent < 0) {
       dogePos.style.setProperty('--doge-offset', `0px`);
     } else {

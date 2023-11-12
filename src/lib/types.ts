@@ -9,3 +9,10 @@ export type Post = {
   published: boolean,
   readingTime?: string
 }
+
+export type Contributions = Array<{
+  count: number,
+  day: string,
+  dat: string,
+  level: number
+} | null>[]

@@ -7,6 +7,7 @@
 	import { memeBanners, technologyBanners, hiBanners, cannonBanners } from './data';
 	import anime from 'animejs';
 	import { onMount } from 'svelte';
+	import GhSkyLine from '$lib/components/ThreeD/GHSkyLine/GHSkyLine.svelte';
 	$: otherStuff = [
 		`AlpineJS-${$modeCurrent ? 'Light' : 'Dark'}`,
 		`Arduino`,
@@ -93,10 +94,10 @@
 		`VueJS-${$modeCurrent ? 'Light' : 'Dark'}`,
 		`Webpack-${$modeCurrent ? 'Light' : 'Dark'}`
 	];
-	const randomHi = hiBanners[Math.floor(Math.random() * hiBanners.length)];
-	const randomBanner = cannonBanners[Math.floor(Math.random() * cannonBanners.length)];
-	const randomMemeBanner = memeBanners[Math.floor(Math.random() * memeBanners.length)];
-	const randomTechnologyBanner =
+	const randomHi = () => hiBanners[Math.floor(Math.random() * hiBanners.length)];
+	const randomBanner = () => cannonBanners[Math.floor(Math.random() * cannonBanners.length)];
+	const randomMemeBanner = () => memeBanners[Math.floor(Math.random() * memeBanners.length)];
+	const randomTechnologyBanner = () =>
 		technologyBanners[Math.floor(Math.random() * technologyBanners.length)];
 
 	let iconsContainer: HTMLDivElement;
@@ -109,12 +110,12 @@
 		const tile = document.createElement('div');
 		tile.classList.add('stagger-tile');
 		tile.onclick = () => handleTileClick(index, tile);
-		const image = `url(/icons/${otherStuff[index]}.svg)`
-		tile.style.setProperty("background-image", image)
+		const image = `url(/icons/${otherStuff[index]}.svg)`;
+		tile.style.setProperty('background-image', image);
 		return tile;
 	};
 
-	$: $modeCurrent, createGrid()
+	$: $modeCurrent, createGrid();
 
 	const createTiles = (quantity: number) => {
 		Array.from(Array(quantity)).map((_, index) => {
@@ -176,19 +177,19 @@
 </script>
 
 <div class="container h-full mx-auto snap-y snap-mandatory overflow-y-scroll hide-scrollbar">
-	<div class="lg:flex snap-start">
+	<div class="lg:flex snap-start items-center">
 		<div class=" w-full lg:w-1/2">
 			<h1 class="gotham-ultra text-8xl">
 				Hi
 				<img
-					src={`/emojis/${randomHi}`}
+					src={`/emojis/${randomHi()}`}
 					alt="Hi! banner"
 					loading="lazy"
 					class="inline aspect-square h-20"
 				/>
 			</h1>
 			<span class="gotham-ultra text-8xl" style="margin-right:1rem">I'm </span>
-			<Stylish class="gotham-ultra text-8xl" banner={`/images/pfps/${randomBanner}`}>Ham!</Stylish>
+			<Stylish class="gotham-ultra text-8xl" banner={`/images/pfps/${randomBanner()}`}>Ham!</Stylish>
 			<div class="text-2xl relative">
 				<span>I am an </span>
 				<Stylish class="gotham-ultra" style="margin-right: 0.025em" banner="/images/dev.gif"
@@ -207,8 +208,11 @@
 				<svelte:component this={data.content} />
 			</div>
 		</div>
-		<div class="lg:w-1/2 hidden lg:block">
-			<Star />
+		<div class="lg:w-1/2 h-full hidden lg:flex justify-center flex-col gap-4">
+			<GhSkyLine />
+			<h1 class="h1 text-center w-full">
+				My GitHub SkyLine
+			</h1>
 		</div>
 	</div>
 	<div class="flex flex-wrap lg:h-screen lg:pt-24 snap-start">
@@ -217,7 +221,7 @@
 				<span class="gotham-ultra text-5xl">Some </span>
 				<Stylish
 					class="gotham-ultra text-5xl"
-					banner={`/images/technology_memes/${randomTechnologyBanner}`}
+					banner={`/images/technology_memes/${randomTechnologyBanner()}`}
 				>
 					Tech
 				</Stylish>
@@ -240,7 +244,7 @@
 				<span class="gotham-ultra text-5xl">Some </span>
 				<Stylish
 					class="gotham-ultra text-5xl"
-					banner={`/images/programming_memes/${randomMemeBanner}`}
+					banner={`/images/programming_memes/${randomMemeBanner()}`}
 				>
 					Languages
 				</Stylish>
@@ -260,7 +264,7 @@
 				<span class="gotham-ultra text-5xl">Some other </span>
 				<Stylish
 					class="gotham-ultra text-5xl"
-					banner={`/images/programming_memes/${randomMemeBanner}`}
+					banner={`/images/programming_memes/${randomMemeBanner()}`}
 				>
 					Things
 				</Stylish>
@@ -286,5 +290,33 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
+	}
+	table {
+		border-spacing: 2px;
+	}
+	td {
+		margin: 16px;
+		padding: 0.4rem;
+		border-radius: 2px;
+
+		&[data-level='0'] {
+			background-color: #2c333b;
+		}
+
+		&[data-level='1'] {
+			background-color: #00442a;
+		}
+
+		&[data-level='2'] {
+			background-color: #006d35;
+		}
+
+		&[data-level='3'] {
+			background-color: #00a648;
+		}
+
+		&[data-level='4'] {
+			background-color: #00d35c;
+		}
 	}
 </style>

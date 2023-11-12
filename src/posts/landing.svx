@@ -10,7 +10,7 @@ published: true
 I'll present myself in code! :zerotwo_hype:
 ```ts twoslash
 // @module: esnext
-// @filename: races.ts
+// @filename: species.ts
 export abstract class Human {
   name: string
   age: string
@@ -28,7 +28,7 @@ export abstract class Human {
   }
 }
 // @filename: me.private.ts
-import { Human } from './races'
+import { Human } from './species'
 const genericDetails: Omit<Human, "nick"|"social"|"interests"> = {
     name:'Ham', 
     age:'20', 
@@ -38,7 +38,7 @@ const genericDetails: Omit<Human, "nick"|"social"|"interests"> = {
 export default genericDetails
 // @filename: me.public.ts
 // ---cut---
-import { Human } from './races' // Think grander ✨
+import { Human } from './species' // Think grander ✨
 import genericDetails from './me.private'
 class Ham extends Human {
   nick = 'Ham'
