@@ -85,5 +85,8 @@
     "build-storybook": "storybook build"
   },
   "type": "module",
-  "dependencies": {}
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1",
+    "web-vitals": "2.1.4"
+  }
 }

@@ -30,7 +30,6 @@ function getCurrentDate() {
 	return formattedDate;
 }
 const getContributions = async ({ user }: RouteParams) => {
-	console.log(getPreviousYearDate(), getCurrentDate());
 	const res = await fetch(
 		`https://github.com/users/${user}/contributions?from=${getPreviousYearDate()}&to=${getCurrentDate()}`
 	);

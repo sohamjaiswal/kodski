@@ -16,7 +16,6 @@ I have been developing since high school and I'll take this opportunity to showc
 ## GPlace
 GPlace was my reddit.com/r/place reverse engineering project where I tried to recreate r/place in svleltekit. I linked it's auth with my existing cardboard project and managed to gain noticable user traction on Guilded.
 
-
 Viewable at: [GPlace.ink](https://gplace.ink), Source Code: [Github](https://github.com/sohamjaiswal/sveltekit-place)
 
 ## Cardboard

@@ -94,7 +94,6 @@
     const posUnit = 'px'
     const dogeImgXPos = Number(dogePos.style.getPropertyValue('--doge-offset').slice(0, -posUnit.length));  // remove 'px' from end
     const dogeImgXPosPercent = (dogeImgXPos/(playSpace.offsetWidth - 16))*100;
-    console.log(dogeImgXPosPercent)
     if (!(dogeImgXPosPercent < 0 || dogeImgXPosPercent > 100)) {
       return
     }
