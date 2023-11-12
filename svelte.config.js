@@ -11,7 +11,6 @@ var __assign = (this && this.__assign) || function () {
 };
 
 import adapter from '@sveltejs/adapter-auto';
-// import adapter from 'svelte-adapter-bun';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
 import remarkUnwrapImages from 'remark-unwrap-images';
