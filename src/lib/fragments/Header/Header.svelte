@@ -49,8 +49,7 @@
 	>
 		<div class="flex gap-4">
 			<a class="btn btn-sm variant-ghost-surface" href="/" rel="noreferrer"> Home </a>
-			<a class="btn btn-sm variant-ghost-surface" href="/" rel="noreferrer"> Stuff </a>
-			<a class="btn btn-sm variant-ghost-surface" href="/" rel="noreferrer"> Socials </a>
+			<a class="btn btn-sm variant-ghost-surface" href="/stuff" rel="noreferrer"> Stuff </a>
 		</div>
 		<div class="flex gap-4 items-center">
 			<button

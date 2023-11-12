@@ -179,7 +179,7 @@
 <div class="container h-full mx-auto snap-y snap-mandatory overflow-y-scroll hide-scrollbar">
 	<div class="lg:flex snap-start items-center">
 		<div class=" w-full lg:w-1/2">
-			<h1 class="gotham-ultra text-8xl">
+			<h1 class="h1 gotham-ultra text-8xl">
 				Hi
 				<img
 					src={`/emojis/${randomHi()}`}
@@ -188,19 +188,21 @@
 					class="inline aspect-square h-20"
 				/>
 			</h1>
-			<span class="gotham-ultra text-8xl" style="margin-right:1rem">I'm </span>
-			<Stylish class="gotham-ultra text-8xl" banner={`/images/pfps/${randomBanner()}`}>Ham!</Stylish>
+			<h1>
+				<span class="h1 gotham-ultra text-8xl" style="margin-right:1rem">I'm </span>
+				<Stylish class="h1 gotham-ultra text-8xl" banner={`/images/pfps/${randomBanner()}`}>Ham!</Stylish>
+			</h1>
 			<div class="text-2xl relative">
 				<span>I am an </span>
-				<Stylish class="gotham-ultra" style="margin-right: 0.025em" banner="/images/dev.gif"
+				<Stylish  style="margin-right: 0.025em" banner="/images/dev.gif"
 					>Independent Developer.</Stylish
 				>
 				<span
 					>I am based in
-					<Stylish class="gotham-ultra" banner="/images/auto.gif">India</Stylish>
+					<Stylish  banner="/images/auto.gif">India</Stylish>
 					and also an undergrad student in</span
 				>
-				<Stylish class="gotham-ultra" banner="/images/arduino.gif"
+				<Stylish  banner="/images/arduino.gif"
 					>Electronics & Communications Engineering.</Stylish
 				>
 			</div>
@@ -211,7 +213,7 @@
 		<div class="lg:w-1/2 h-full hidden lg:flex justify-center flex-col gap-4">
 			<GhSkyLine />
 			<h1 class="h1 text-center w-full">
-				My GitHub SkyLine
+				GutHib SkyLine <br />(Filler cuz it looks cool)
 			</h1>
 		</div>
 	</div>
