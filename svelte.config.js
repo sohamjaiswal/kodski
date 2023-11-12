@@ -10,8 +10,8 @@ var __assign = (this && this.__assign) || function () {
 	return __assign.apply(this, arguments);
 };
 
-// import adapter from '@sveltejs/adapter-auto';
-import adapter from 'svelte-adapter-bun';
+import adapter from '@sveltejs/adapter-auto';
+// import adapter from 'svelte-adapter-bun';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
 import remarkUnwrapImages from 'remark-unwrap-images';
@@ -73,7 +73,6 @@ var rehypeCustomEmoji = function (options) {
 			visit(tree, ["raw", "element", "text"], function (node) {
 				switch (node.type) {
 					case "raw":
-						// console.log(node.value)
 						// replace emoji strings taking values from replace_maps
 						node.value = node.value.replace(/(:[a-zA-Z0-9_+-]+:|\n:[a-zA-Z0-9_+-]+:)/g, function (match) {
 							// return replace_maps[match] || match;
