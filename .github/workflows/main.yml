@@ -28,4 +28,3 @@ jobs:
           git pull origin main
           docker-compose -f prod.docker-compose.yml down --remove-orphans
           docker-compose -f prod.docker-compose.yml up --build -d
-          
