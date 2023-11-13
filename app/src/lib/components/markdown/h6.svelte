@@ -3,6 +3,6 @@
   interface $$Props extends HTMLAttributes<HTMLHeadingElement> {}
 </script>
 
-<h6 {...$$restProps} class={`text-2xl text-inherit ${$$restProps.class}`}>
+<h6 {...$$restProps} class={`h6 text-inherit ${$$restProps.class}`}>
   <slot />
 </h6>

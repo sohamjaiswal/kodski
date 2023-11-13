@@ -220,7 +220,6 @@
 	<div class="flex flex-wrap lg:h-screen lg:pt-24 snap-start">
 		<div class="w-full lg:w-1/2 lg:h-full">
 			<div class="flex gap-2 flex-wrap text-center justify-center md:justify-start">
-				<span class="gotham-ultra text-5xl">Some </span>
 				<Stylish
 					class="gotham-ultra text-5xl"
 					banner={`/images/technology_memes/${randomTechnologyBanner()}`}
@@ -243,12 +242,11 @@
 		</div>
 		<div class="w-full lg:w-1/2 lg:h-full">
 			<div class="flex gap-2 flex-wrap text-center justify-center md:justify-start">
-				<span class="gotham-ultra text-5xl">Some </span>
 				<Stylish
 					class="gotham-ultra text-5xl"
 					banner={`/images/programming_memes/${randomMemeBanner()}`}
 				>
-					Languages
+					Langs
 				</Stylish>
 				<span class="gotham-ultra text-5xl"> I Like to Use...</span>
 			</div>

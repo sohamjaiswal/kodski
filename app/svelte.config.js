@@ -10,8 +10,8 @@ var __assign = (this && this.__assign) || function () {
 	return __assign.apply(this, arguments);
 };
 
-// import adapter from '@sveltejs/adapter-auto';
-import adapter from 'svelte-adapter-bun'
+import adapter from '@sveltejs/adapter-node';
+// import adapter from 'svelte-adapter-bun'
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
 import remarkUnwrapImages from 'remark-unwrap-images';
@@ -129,9 +129,8 @@ const mdsvexOptions = {
 	},
 	highlight: shikiTwoslashHighlighter({themes: ['monokai', 'material-lighter']}),
 	// remarkgfm, remarkmath, rehypekatex not working
-	remarkPlugins: [remarkGfm, remarkMath, remarkUnwrapImages, remarkEmoji, remarkToc],
+	remarkPlugins: [remarkGfm, remarkMath, remarkUnwrapImages, remarkEmoji],
 	rehypePlugins: [
-		rehypeSlug,
 		rehypeKatex,
 		[rehypeCustomEmoji, {
 			emojis: {

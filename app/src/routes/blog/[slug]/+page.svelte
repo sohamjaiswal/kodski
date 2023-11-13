@@ -1,4 +1,5 @@
 <script lang='ts'>
+  import { TableOfContents, tocCrawler } from '@skeletonlabs/skeleton';
   export let data
 </script>
 
@@ -19,7 +20,7 @@
 
 <article>
   <hgroup>
-    <h1 class="text-8xl">{data.meta.title}</h1>
+    <h1 class="h1 text-5xl mb-2">{data.meta.title}</h1>
     <p>Published at {(new Date(data.meta.date)).toLocaleDateString()}</p>
   </hgroup>
   <div class="flex gap-1">
@@ -31,7 +32,8 @@
     {data.meta.description}
   </p>
   <hr class='my-2' />
-  <div class="prose text-inherit">
+  <div class="prose text-inherit mt-2" use:tocCrawler={{ mode: 'generate', scrollTarget: '#page' }}>
+    <TableOfContents class="card fixed top-1/2 -translate-y-1/2 right-10 p-4 text-inherit hidden md:block max-h-[300px] overflow-scroll overflow-x-hidden hide-scrollbar" />
     <svelte:component this={data.content} />
   </div>
 </article>

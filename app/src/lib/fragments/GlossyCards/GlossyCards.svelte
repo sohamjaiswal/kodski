@@ -28,7 +28,7 @@
 
 <div class="cards" on:mousemove={handleContainerMouseMove}>
 	{#each cards as card}
-		<div class="card rounded-md" style={`height: ${height}px; width: ${width}px`}>
+		<div class="card" style={`height: ${height}px; width: ${width}px`}>
 			<div class="card-border" />
 			<div class={`card-content`}>
 				<svelte:component this={card.component} {...card.value} />

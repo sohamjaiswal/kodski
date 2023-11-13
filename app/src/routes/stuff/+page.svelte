@@ -1,4 +1,6 @@
 <script lang="ts">
   export let data
 </script>
-<svelte:component this={data.content} />
+<main class="prose text-inherit">
+  <svelte:component this={data.content} />
+</main>

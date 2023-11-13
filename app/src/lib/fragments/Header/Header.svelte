@@ -32,7 +32,7 @@
 </script>
 
 <nav
-	class="variant-glass-surface p-2 rounded-md mt-7 h-12 fixed md:flex container mx-auto"
+	class="card variant-glass-surface p-2 mt-7 h-12 fixed md:flex container mx-auto"
 >
 	<div class="pet-space absolute">
 		<Dog />

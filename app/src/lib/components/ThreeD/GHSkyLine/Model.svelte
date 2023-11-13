@@ -38,7 +38,7 @@
 	});
 </script>
 
-<T.PerspectiveCamera makeDefault position={[50, 500, 500]} fov={60}>
+<T.PerspectiveCamera makeDefault position={[50, 500, 500]} fov={75}>
 	<OrbitControls enableDamping autoRotate />
 </T.PerspectiveCamera>
 <T.AmbientLight intensity={0.5} color="#fff" />

@@ -6,4 +6,5 @@ import h3 from './h3.svelte'
 import h2 from './h2.svelte'
 import h1 from './h1.svelte'
 import strong from './strong.svelte'
-export {img, h6, h5, h4, h3, h2, h1, strong}
+import a from './a.svelte'
+export {img, h6, h5, h4, h3, h2, h1, strong, a}
