@@ -15,7 +15,6 @@ import adapter from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
 import remarkUnwrapImages from 'remark-unwrap-images';
-import remarkToc from 'remark-toc';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkEmoji from 'remark-emoji';

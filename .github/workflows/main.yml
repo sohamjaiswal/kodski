@@ -24,7 +24,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          cd ~/place
+          cd ~/kodski
           git pull origin main
           docker-compose -f prod.docker-compose.yml down --remove-orphans
           docker-compose -f prod.docker-compose.yml up --build -d
