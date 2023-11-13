@@ -293,32 +293,4 @@
 		background-repeat: no-repeat;
 		background-position: center;
 	}
-	table {
-		border-spacing: 2px;
-	}
-	td {
-		margin: 16px;
-		padding: 0.4rem;
-		border-radius: 2px;
-
-		&[data-level='0'] {
-			background-color: #2c333b;
-		}
-
-		&[data-level='1'] {
-			background-color: #00442a;
-		}
-
-		&[data-level='2'] {
-			background-color: #006d35;
-		}
-
-		&[data-level='3'] {
-			background-color: #00a648;
-		}
-
-		&[data-level='4'] {
-			background-color: #00d35c;
-		}
-	}
 </style>

@@ -10,7 +10,8 @@ var __assign = (this && this.__assign) || function () {
 	return __assign.apply(this, arguments);
 };
 
-import adapter from '@sveltejs/adapter-auto';
+// import adapter from '@sveltejs/adapter-auto';
+import adapter from 'svelte-adapter-bun'
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
 import remarkUnwrapImages from 'remark-unwrap-images';
