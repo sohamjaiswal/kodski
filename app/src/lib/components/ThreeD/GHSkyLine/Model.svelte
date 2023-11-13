@@ -5,20 +5,21 @@
 	import { onMount } from 'svelte';
 	import { T } from '@threlte/core';
 	import { Align, OrbitControls } from '@threlte/extras';
+	import { modeCurrent } from '@skeletonlabs/skeleton';
 	let contributions: Contributions = [];
   $: contributions = contributions
   const getColor: (level: number) => string = (level: number) => {
     switch (level) {
       default:
-        return "#0e0e0e";
+        return $modeCurrent ? "#f0f0f0" : "#0e0e0e";
       case 1:
-        return "#00442a";
-      case 2:
-        return "#006d35";
-      case 3:
-        return "#00a648";
-      case 4:
         return "#00d35c";
+      case 2:
+        return "#00a648";
+      case 3:
+        return "#ffaa22";
+      case 4:
+        return "#ff442a";
     }
   };
   const normalize = (count: number, base = 4, offset = 2) => {
@@ -38,13 +39,13 @@
 	});
 </script>
 
-<T.PerspectiveCamera makeDefault position={[50, 500, 500]} fov={75}>
+<T.PerspectiveCamera makeDefault position={[50, 500, 500]} fov={90}>
 	<OrbitControls enableDamping autoRotate />
 </T.PerspectiveCamera>
 <T.AmbientLight intensity={0.5} color="#fff" />
 <T.DirectionalLight position={[0, 200, 200]} intensity={2} color="#fff" />
 <T.DirectionalLight position={[0, 200, -200]} intensity={2} color="#fff" />
-{#key contributions}
+{#key [contributions, $modeCurrent]}
 <Align autoAlign>
   {#each contributions as row, i}
     {#each row as day, j}

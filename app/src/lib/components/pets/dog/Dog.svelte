@@ -93,7 +93,7 @@
   const handleResize = async() => {
     const posUnit = 'px'
     const dogeImgXPos = Number(dogePos.style.getPropertyValue('--doge-offset').slice(0, -posUnit.length));  // remove 'px' from end
-    const dogeImgXPosPercent = (dogeImgXPos/(playSpace.offsetWidth - 16))*100;
+    const dogeImgXPosPercent = (dogeImgXPos/(playSpace?.offsetWidth - 16))*100;
     if (!(dogeImgXPosPercent < 0 || dogeImgXPosPercent > 100)) {
       return
     }
@@ -115,7 +115,7 @@
     const WALK_FAST_SPEED = 0.40;
     const posUnit = 'px'
     const dogeImgXPos = Number(dogePos.style.getPropertyValue('--doge-offset').slice(0, -posUnit.length));  // remove 'px' from end
-    const dogeImgXPosPercent = (dogeImgXPos/(playSpace.offsetWidth - 16))*100;
+    const dogeImgXPosPercent = (dogeImgXPos/(playSpace?.offsetWidth - 16))*100;
     if (dogeImgXPosPercent < 0 || dogeImgXPosPercent > 100) {
       doFlip();
     }
@@ -141,7 +141,7 @@
     if (CHANGE_DIRECTION_RIGHT_NOW) {
       doFlip();
     }
-    if (playSpace.offsetWidth <= 33) {
+    if (playSpace?.offsetWidth <= 33) {
       dogePos.style.setProperty('--doge-offset', `0px`);
       const stationaryAnimations = ['idle', 'lie', 'swipe'] as Array<Partial<ActiveAnimation>>;
       if (stationaryAnimations.includes(activeAnimation)) {

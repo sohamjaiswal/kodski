@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import Dog from '$lib/components/pets/dog/Dog.svelte';
-	import { LightSwitch, popup, storePopup } from '@skeletonlabs/skeleton';
+	import { LightSwitch, popup, storePopup, type DrawerSettings, getDrawerStore } from '@skeletonlabs/skeleton';
 	import Icon from '@iconify/svelte';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import { storeTheme } from '$lib/stores/stores';
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
+	import { themes } from '$lib/config';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 	const setTheme: SubmitFunction = ({ formData }) => {
 		const theme = formData.get('theme')?.toString();
@@ -15,20 +16,13 @@
 			$storeTheme = theme;
 		}
 	};
-	const themes = [
-		{ type: 'skeleton', name: 'Skeleton', icon: '💀' },
-		{ type: 'wintry', name: 'Wintry', icon: '🌨️' },
-		{ type: 'modern', name: 'Modern', icon: '🤖' },
-		{ type: 'rocket', name: 'Rocket', icon: '🚀' },
-		{ type: 'seafoam', name: 'Seafoam', icon: '🧜‍♀️' },
-		{ type: 'vintage', name: 'Vintage', icon: '📺' },
-		{ type: 'sahara', name: 'Sahara', icon: '🏜️' },
-		{ type: 'hamlindigo', name: 'Hamlindigo', icon: '👔' },
-		{ type: 'gold-nouveau', name: 'Gold Nouveau', icon: '💫' },
-		{ type: 'crimson', name: 'Crimson', icon: '⭕' }
-		// { type: 'seasonal', name: 'Seasonal', icon: '🎆' }
-		// { type: 'test', name: 'Test', icon: '🚧' },
-	];
+	const drawerStore = getDrawerStore();
+	const drawerSettings: DrawerSettings = {
+		position: 'left',
+		width: 'w-[280px] md:w-[480px]',
+		padding: 'p-4',
+		rounded: 'rounded-lg'
+	};
 </script>
 
 <nav
@@ -38,11 +32,12 @@
 		<Dog />
 	</div>
 	<button
-		class="hamburger flex flex-col justify-evenly opacity-100 w-full sm:w-0 sm:opacity-0 transition-all duration-300"
+		class="btn btn-icon hamburger flex flex-col justify-evenly opacity-100 w-full sm:w-0 sm:opacity-0 transition-all duration-300"
+		on:click={() => {
+			drawerStore.open(drawerSettings);
+		}}
 	>
-		<hr class='variant-ringed-surface w-full' />
-		<hr class='variant-ringed-surface w-full' />
-		<hr class='variant-ringed-surface w-full' />
+		<Icon icon="mdi:hamburger-menu" />
 </button>
 	<div
 		class="justify-between items-center opacity-0 overflow-hidden sm:opacity-100 transition-all duration-300 sm:flex sm:w-full"
@@ -101,10 +96,6 @@
 	nav {
 		.hamburger {
 			height: 100%;
-			hr {
-				border-width: 2px;
-				border-radius: 4px;
-			}
 		}
 		.pet-space {
 				transform: translate(0, -135%);
