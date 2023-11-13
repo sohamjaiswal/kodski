@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  kodski-app:
+    container_name: kodski-app
+    build: 
+      context: .
+      dockerfile: ./docker/prod/app.dockerfile
+    restart: always
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    volumes:
+      - ./app:/app
+    environment:
+      APP_PORT: ${APP_PORT}
