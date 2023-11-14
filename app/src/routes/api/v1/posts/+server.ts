@@ -32,9 +32,7 @@ const getPosts = async() => {
       post.published && posts.push(post)
     }
   }
-
   posts.sort((first, second) => new Date(second.date).getTime() - new Date(first.date).getTime())
-
   return posts
 }
 
