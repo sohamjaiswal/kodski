@@ -18,7 +18,7 @@
 
 {#if banner.length > 0}
 <img class='span-image' class:active={bannerActive} src={banner} alt="text context" bind:this={bannerImage} loading="lazy" />
-<span on:mouseenter={() => bannerActive=true} on:mousedown={() => bannerActive=true} on:mouseleave={() => bannerActive = false} {...$$restProps} class={`${$$restProps.class} custom-span relative stylish`}>
+<span on:mouseenter={() => bannerActive=true} on:mousedown={() => bannerActive=true} on:mouseleave={() => bannerActive = false} {...$$restProps} class={`${$$restProps.class} custom-span relative stylish`} aria-valuetext="Moving Picture">
   <slot />
 </span>
 {:else}

@@ -39,12 +39,12 @@
 	});
 </script>
 
-<T.PerspectiveCamera makeDefault position={[50, 500, 500]} fov={90}>
+<T.PerspectiveCamera makeDefault position={[50, 500, 500]} fov={75}>
 	<OrbitControls enableDamping autoRotate />
 </T.PerspectiveCamera>
-<T.AmbientLight intensity={0.5} color="#fff" />
-<T.DirectionalLight position={[0, 200, 200]} intensity={2} color="#fff" />
-<T.DirectionalLight position={[0, 200, -200]} intensity={2} color="#fff" />
+<T.AmbientLight intensity={1} color="#fff" />
+<T.DirectionalLight position={[0, 200, 200]} intensity={1.5} color="#fff" />
+<T.DirectionalLight position={[0, 200, -200]} intensity={1.5} color="#fff" />
 {#key [contributions, $modeCurrent]}
 <Align autoAlign>
   {#each contributions as row, i}

@@ -21,9 +21,6 @@ import remarkEmoji from 'remark-emoji';
 import rehypeFormat from 'rehype-format';
 import rehypeAccessibleEmojis from 'rehype-accessible-emojis';
 import rehypeKatex from 'rehype-katex';
-import Slugger from 'github-slugger';
-import { hasProperty } from 'hast-util-has-property';
-import { toString } from 'hast-util-to-string';
 import { visit } from 'unist-util-visit';
 import { h } from "hastscript";
 import { findAndReplace } from "hast-util-find-and-replace";
@@ -37,7 +34,7 @@ var defaultOptions = {
 };
 
 function objectToHtml(obj) {
-  const { type, tagName, properties, children } = obj;
+  const { tagName, properties } = obj;
 
   const attributes = Object.entries(properties)
     .map(([key, value]) => {
@@ -94,37 +91,11 @@ var rehypeCustomEmoji = function (options) {
 			});
 	};
 };
-
-const slugs = new Slugger();
-
-const headingRank = (node) => {
-	const name = (node && node.type === 'element' && node.tagName.toLowerCase()) || '';
-	const code =
-		name.length === 2 && name.charCodeAt(0) === 104 /* `h` */
-			? name.charCodeAt(1)
-			: name.length === 13 && name.charCodeAt(11) === 104 /* Components.h (h at 11th pos) */
-			? name.charCodeAt(12)
-			: 0;
-	return code > 48 /* `0` */ && code < 55 /* `7` */ ? code - 48 /* `0` */ : null;
-};
-const rehypeSlug = (options) => {
-	const prefix = options?.prefix || '';
-
-	return (tree) => {
-		slugs.reset();
-
-		visit(tree, 'element', (node) => {
-			if (headingRank(node) && node.properties && !hasProperty(node, 'id')) {
-				node.properties.id = prefix + slugs.slug(toString(node));
-			}
-		});
-	};
-};
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
 	extension: '.svx',
 	layout: {
-		_: './src/mdsvex.svelte'
+		_: './src/lib/layouts/mdsvex.svelte'
 	},
 	highlight: shikiTwoslashHighlighter({themes: ['monokai', 'material-lighter']}),
 	// remarkgfm, remarkmath, rehypekatex not working

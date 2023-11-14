@@ -1,6 +1,5 @@
 <script lang="ts">
 	export let data;
-	import Star from '$lib/components/ThreeD/Star/Star.svelte';
 	import Stylish from '$lib/components/Stylish.svelte';
 	import Tech from '$lib/components/ThreeD/Tech/Tech.svelte';
 	import { modeCurrent } from '@skeletonlabs/skeleton';

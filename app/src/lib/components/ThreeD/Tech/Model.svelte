@@ -12,7 +12,7 @@
 	export const ref = new Group();
 	let rotation = 0;
 	let dn = Date.now();
-	useFrame((state, delta) => {
+	useFrame((_, delta) => {
 		rotation += delta;
 		dn = Date.now();
 	});
@@ -21,10 +21,7 @@
 <T.PerspectiveCamera makeDefault position={[0, 10, 0]}>
 	<OrbitControls autoRotate autoRotateSpeed={0} enableDamping enableZoom={false} />
 </T.PerspectiveCamera>
-<!-- <T.DirectionalLight position={[10, 10, 10]} intensity={1} castShadow />
-<T.DirectionalLight position={[-10, -10, -10]} intensity={2} castShadow />
-<T.DirectionalLight position={[-20, 10, -20]} castShadow />
-<T.DirectionalLight position={[20, -10, 20]} castShadow /> -->
+
 <T.AmbientLight intensity={0.5} color="#fff" />
 <T.DirectionalLight position={[0, 200, 200]} intensity={1.5} color="#fff" />
 <T.DirectionalLight position={[0, 200, -200]} intensity={1.5} color="#fff" />
@@ -38,5 +35,6 @@
 		scale={$scale}
 		on:pointerenter={() => scale.set(1.25)}
 		on:pointerleave={() => scale.set(1)}
+		aria-label="3D Model"
 	/>
 {/await}

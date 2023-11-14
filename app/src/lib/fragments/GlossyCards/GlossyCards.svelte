@@ -15,6 +15,7 @@
 		const realCards = cards as HTMLCollectionOf<HTMLElement>;
 		if (realCards) {
 			for (let i = 0; realCards.length; i++) {
+				realCards[i].setAttribute('aria-label', `Glossy Card ${i}`);
 				const rect = realCards[i].getBoundingClientRect(),
 					x = e.clientX - rect.left,
 					y = e.clientY - rect.top;
@@ -26,7 +27,7 @@
 	};
 </script>
 
-<div class="cards" on:mousemove={handleContainerMouseMove}>
+<div class="cards" on:mousemove={handleContainerMouseMove} >
 	{#each cards as card}
 		<div class="card" style={`height: ${height}px; width: ${width}px`}>
 			<div class="card-border" />
