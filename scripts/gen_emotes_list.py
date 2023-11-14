@@ -11,5 +11,5 @@ def list_directory_contents(directory_path):
     return memes
 
 if __name__ == "__main__":
-    path = '../static/emojis'
+    path = './app/static/emojis'
     print(list_directory_contents(path))
