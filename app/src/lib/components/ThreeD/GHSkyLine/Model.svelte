@@ -39,27 +39,27 @@
 	});
 </script>
 
-<T.PerspectiveCamera makeDefault position={[50, 500, 500]} fov={75}>
+<T.PerspectiveCamera makeDefault position={[100, 200, 400]} fov={75}>
 	<OrbitControls enableDamping autoRotate />
 </T.PerspectiveCamera>
 <T.AmbientLight intensity={1} color="#fff" />
 <T.DirectionalLight position={[0, 200, 200]} intensity={1.5} color="#fff" />
 <T.DirectionalLight position={[0, 200, -200]} intensity={1.5} color="#fff" />
 {#key [contributions, $modeCurrent]}
-<Align autoAlign>
-  {#each contributions as row, i}
-    {#each row as day, j}
-      {#if day}
-        {@const color = getColor(day.level)}
-        {@const y = normalize(day.count)}
-        <T.Group position={[0, 0, 12 * i]} scale.y={$scaleY}>
-          <T.Mesh position={[12 * j, y / 2, 0]}>
-            <T.BoxGeometry args={[10, y, 10]} />
-            <T.MeshStandardMaterial {color} />
-          </T.Mesh>
-        </T.Group>
-      {/if}
+  <Align auto>
+    {#each contributions as row, i}
+      {#each row as day, j}
+        {#if day}
+          {@const color = getColor(day.level)}
+          {@const y = normalize(day.count)}
+          <T.Group position={[0, 0, 12 * i]} scale.y={$scaleY}>
+            <T.Mesh position={[12 * j, y/2-250, 0]}>
+              <T.BoxGeometry args={[10, y, 10]} />
+              <T.MeshStandardMaterial {color} />
+            </T.Mesh>
+          </T.Group>
+        {/if}
+      {/each}
     {/each}
-  {/each}
-</Align>
+  </Align>
 {/key}
