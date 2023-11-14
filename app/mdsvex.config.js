@@ -94,7 +94,7 @@ var rehypeCustomEmoji = function (options) {
 export const mdsvexOptions = {
 	extension: '.svx',
 	layout: {
-		_: './src/lib/layouts/mdsvex.svelte'
+		_: "./src/lib/layouts/mdsvex.svelte"
 	},
 	highlight: shikiTwoslashHighlighter({themes: ['monokai', 'material-lighter']}),
 	// remarkgfm, remarkmath, rehypekatex not working
