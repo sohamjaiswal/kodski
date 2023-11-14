@@ -1,9 +1,11 @@
-import adapter from '@sveltejs/adapter-auto'
-// import adapter from '@sveltejs/adapter-node';
+import autoAdapter from '@sveltejs/adapter-auto';
+import nodeAdapter from '@sveltejs/adapter-node';
 // import adapter from 'svelte-adapter-bun'
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
 import { mdsvexOptions } from './mdsvex.config.js';
+import { configDotenv } from 'dotenv';
+configDotenv();
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -19,14 +21,19 @@ const config = {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
 		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
-		adapter: adapter({
+		adapter: process.env.NOT_VERCEL ? nodeAdapter({
 			out: 'build',
+			precompress: {
+				brotli: true,
+				gzip: true
+			} 
+		}) : autoAdapter({
 			assets: true,
 			precompress: {
 				brotli: true,
 				gzip: true
-			}
-		})
+			} 
+		}) 
 	}
 };
 export default config;
