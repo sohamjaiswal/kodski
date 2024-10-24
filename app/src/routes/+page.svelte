@@ -209,12 +209,12 @@
 				<svelte:component this={data.content} />
 			</div>
 		</div>
-		<div class="lg:w-1/2 h-full hidden lg:flex justify-center flex-col gap-4">
+		<!-- <div class="lg:w-1/2 h-full hidden lg:flex justify-center flex-col gap-4">
 			<GhSkyLine />
 			<h1 class="h1 text-center w-full">
 				GutHib SkyLine <br />(Filler cuz it looks cool)
 			</h1>
-		</div>
+		</div> -->
 	</div>
 	<div class="flex flex-wrap lg:h-screen lg:pt-24 snap-start">
 		<div class="w-full lg:w-1/2 lg:h-full">
