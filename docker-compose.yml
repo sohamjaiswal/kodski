@@ -3,10 +3,10 @@ version: "3.3"
 services:
   kodski-app:
     container_name: kodski-app
-    build: 
+    build:
       context: .
       dockerfile: ./docker/dev/app.dockerfile
-    restart: always
+    restart: unless-stopped
     ports:
       - 5173:5173
     volumes:
